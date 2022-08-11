@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-
+!!!
 
 # Locators from headers main page/
 class Main_Page_Locators:
@@ -37,7 +37,7 @@ class Auth_Page_Locators:
 # Locators from find_bar main page.
 class Find_Bar_Locators:
     FND_BAR = (By.xpath('//input[@name="fg_text"]'))
-    FND_BAR = (By.xpath('//a[@class="open_search_cats"]'))
+    FND_ = (By.xpath('//a[@class="open_search_cats"]'))
     FND_MNU = (By.xpath('//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]'))
 
 

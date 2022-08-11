@@ -1,2 +1,2 @@
 # autotest_CRM
-aututest CRM 
+autotest CRM 

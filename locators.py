@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-!!!
+
 
 # Locators from headers main page/
 class Main_Page_Locators:

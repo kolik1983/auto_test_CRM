@@ -1,1 +1,1 @@
-main_page = 'https://minifreemarket.com/'
+main_url = 'https://minifreemarket.com/'

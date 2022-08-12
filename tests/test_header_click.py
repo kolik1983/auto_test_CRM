@@ -17,7 +17,7 @@ def test_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
     page.logo.click()
     
-    assert main_url == 'https://minifreemarket.com/'
+    assert url == 'https://minifreemarket.com/'
     
     
 

@@ -1,15 +1,21 @@
-import pytest
-from pages import MainPage
+import os
+
+from pages.base import WebPage
+from pages.elements import WebElement
+from pages.elements import ManyWebElements
+from autotest_CRM import 
 
 
-def test_check_main_search(web_browser):
-    """ Make sure main search works fine. """
+class MainPage(WebPage):
 
-    page = MainPage(web_browser)
+    def __init__(self, web_driver, url=''):
+        if not url:
+            url = os.getenv("MAIN_URL") or 'https://minifreemarket.com/'
 
-    page.search = 'iPhone 12'
-    page.search_run_button.click()
+        super().__init__(web_driver, url)
 
-    # Verify that user can see the list of products:
-    assert page.products_titles.count() == 48
+    # Main LOGO.
+    search = WebElement(id='header-search')
 
+    # Search button
+    search_run_button = WebElement(xpath='//button[@type="submit"]')

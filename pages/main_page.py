@@ -3,7 +3,7 @@ import os
 from pages.base import WebPage
 from pages.elements import WebElement
 from pages.elements import ManyWebElements
-from autotest_CRM import 
+from locators import Main_Page_Locators
 
 
 class MainPage(WebPage):
@@ -15,7 +15,7 @@ class MainPage(WebPage):
         super().__init__(web_driver, url)
 
     # Main LOGO.
-    search = WebElement(id='header-search')
+    logo = WebElement()
 
     # Search button
     search_run_button = WebElement(xpath='//button[@type="submit"]')

@@ -19,7 +19,7 @@ def test_check_logo_refresh(web_browser):
     page.logo.click()
     
     assert url == 'https://minifreemarket.com/'
-    
+    assert page.get_current_url() == 'https://minifreemarket.com/'
     
 
   

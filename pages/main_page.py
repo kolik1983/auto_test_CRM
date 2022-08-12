@@ -15,7 +15,7 @@ class MainPage(WebPage):
         super().__init__(web_driver, url)
 
     # Main LOGO.
-    logo = WebElement()
+    logo = WebElement(LOGO_BTN)
 
     # Search button
     search_run_button = WebElement(xpath='//button[@type="submit"]')

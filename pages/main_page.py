@@ -18,4 +18,4 @@ class MainPage(WebPage):
     logo = WebElement(LOGO_BTN)
 
     # Search button
-    search_run_button = WebElement(xpath='//button[@type="submit"]')
+    #search_run_button = WebElement(xpath='//button[@type="submit"]')

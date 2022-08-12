@@ -11,13 +11,15 @@
 
 import pytest
 from pages.main_page import MainPage
-
+from setting import *
 
 def test_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
     page.logo.click()
     
-    assert 
+    assert main_url == 'https://minifreemarket.com/'
+    
+    
 
   
   

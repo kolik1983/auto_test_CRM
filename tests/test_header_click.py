@@ -13,7 +13,7 @@ import pytest
 from pages.main_page import MainPage
 from setting import *
 
-def test_check_logo_refresh(web_browser):
+def test_01_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
     page.help.click()
     page.logo.click()

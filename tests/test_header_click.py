@@ -18,8 +18,8 @@ def test_01_check_logo_refresh(web_browser):
     page.help.click()
     page.logo.click()
     
-    assert url == 'https://minifreemarket.com/'
-    assert page.get_current_url() == 'https://minifreemarket.com/'
+    assert page.get_current_url() == setting.main_url
+    
     
 
   

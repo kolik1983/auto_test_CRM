@@ -11,16 +11,11 @@
 
 import pytest
 from pages.main_page import MainPage
-from setting import *
+from setting import Conf
 
 def test_01_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
     page.help.click()
     page.logo.click()
     
-    assert page.get_current_url() == setting.main_url
-    
-    
-
-  
-  
+    assert page.get_current_url() == Conf.main_url

@@ -15,7 +15,7 @@ from setting import *
 
 def test_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
-    page.help.clck()
+    page.help.click()
     page.logo.click()
     
     assert url == 'https://minifreemarket.com/'

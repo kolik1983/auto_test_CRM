@@ -15,6 +15,7 @@ class Main_Page_Locators:
     EUR_BTN = (By.xpath('//a[contains(text(), "EUR")]'))
     BST_BTN = (By.xpath('//a[@class="basket"]'))
     CAT_BTN = (By.xpath('//div[@class="item"]'))
+    CAT_MNU = (By.xpath('//div[@class="cat_menu"]'))
     SHP_BTN = (By.xpath('//div[@class="item shops_btn"]'))
     SEL_BTN = (By.xpath('//div[@class="item adadd"]'))
     USR_BTN = (By.xpath('//a[@class="user"]'))

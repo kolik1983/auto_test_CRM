@@ -42,6 +42,8 @@ class Find_Bar_Locators:
     FND_BAR = (By.xpath('//input[@name="fg_text"]'))
     FND_ = (By.xpath('//a[@class="open_search_cats"]'))
     FND_MNU = (By.xpath('//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]'))
+    FND_NEG = (By.xpath('//p[contains(text(), "По Вашему запросу ничего не найдено")]'))
+    
 
 
 

@@ -17,5 +17,5 @@ def test_01_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
     page.help.click()
     page.logo.click()
-    
     assert page.get_current_url() == Conf.main_url
+    

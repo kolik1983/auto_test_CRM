@@ -1,6 +1,7 @@
 class Conf():
     main_url = 'https://minifreemarket.com/'
     auth_url = 'https://minifreemarket.com/cabinet'
+    login_url = 'https://minifreemarket.com/cabinet/register'
     correct_login = 'erigov@mail.ru'
     correct_pass = 'fktrctq83'
     incorrect_login = 'qwe123@#$'

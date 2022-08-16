@@ -23,6 +23,7 @@ class MainPage(WebPage):
     RUS_LANG = WebElement(xpath='//a[contains(text(), "RUS")]')
     # Rus lang switch button
     ENG_LANG = WebElement(xpath='//a[contains(text(), "RUS")]')
+    
     LOGO_RUS = WebElement(xpath='//div[contains(text(), "Язык")]')
     LOGO_ENG = WebElement(xpath='//div[contains(text(), "Language")]')
     RUB_BTN = WebElement(xpath='//a[contains(text(), "RUB")]')

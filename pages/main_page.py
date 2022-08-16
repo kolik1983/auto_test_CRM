@@ -51,5 +51,13 @@ class MainPage(WebPage):
     USR_BTN = WebElement(xpath='//a[@class="user"]')
     # Login/auth button
     AUTH_BTN = WebElement(xpath='//a[@class="login"]')
+    # find bar
+    FND_BAR = (By.xpath('//input[@name="fg_text"]'))
+    # category menu
+    FND_ = (By.xpath('//a[@class="open_search_cats"]'))
+    # category in warhammer 40000
+    FND_MNU = (By.xpath('//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]'))
+    #string negative find
+    FND_NEG = (By.xpath('//p[contains(text(), "По Вашему запросу ничего не найдено")]'))
 
 

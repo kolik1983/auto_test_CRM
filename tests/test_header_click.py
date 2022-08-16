@@ -23,5 +23,9 @@ def test_01_check_logo_refresh(web_browser):
 def test_02_check_category_menu(web_browser):
     """Появление меню категории при нажании на оноименную кнопку"""
     page = MainPage(web_browser)
+    page.CAT_BTN.click()
+    assert page.CAT_MNU.is_visible()
+    
+    
     
     

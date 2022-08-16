@@ -13,7 +13,7 @@ class MainPage(WebPage):
 
         super().__init__(web_driver, url)
 
-    #
+    #login string
     CAB_REG = WebElement(xpath='//a[contains(text(), "учетную запись")]')
     AUTH_B = WebElement(xpath='//input[@name="login_"]')
     PASS_B = WebElement(xpath='//input[@name="password_"]')

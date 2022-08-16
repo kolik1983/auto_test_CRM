@@ -13,5 +13,13 @@ class MainPage(WebPage):
 
         super().__init__(web_driver, url)
 
-    # Main LOGO.
-    LOGO_BTN = WebElement(xpath='//a[@class="logo"]')
+    #
+    CAB_REG = WebElement(xpath='//a[contains(text(), "учетную запись")]')
+    AUTH_B = WebElement(xpath='//input[@name="login_"]')
+    PASS_B = WebElement(xpath='//input[@name="password_"]')
+    LOG_BTN = WebElement(xpath='//a[@class="btn submit"]')
+    REG_HR = WebElement(xpath='//form/a[contains(text(), "Регистрация")]')
+    FGT_HR = WebElement(xpath='//a[@class="fr"]')
+    VK_BTN = WebElement(xpath='//a[@class="soc_btn vk"]')
+    FB_BTN = WebElement(xpath='//a[@class="soc_btn fb"]')
+    YA_BTN = WebElement(xpath='//a[@class="soc_btn ya"]')

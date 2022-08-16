@@ -13,3 +13,4 @@ class Conf():
     necron_url = 'https://minifreemarket.com/catalog?fg_text=necrons&'
     shops_url = 'https://minifreemarket.com/shops'
     bask_url = 'https://minifreemarket.com/order'
+    sel_url = 'https://minifreemarket.com/cabinet/products/add'

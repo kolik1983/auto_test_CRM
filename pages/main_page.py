@@ -47,7 +47,9 @@ class MainPage(WebPage):
     SHP_BTN = WebElement(xpath='//div[@class="item shops_btn"]')
     # Busket button
     SEL_BTN = WebElement(xpath='//div[@class="item adadd"]')
+    # Button user icon
     USR_BTN = WebElement(xpath='//a[@class="user"]')
+    # Login/auth button
     AUTH_BTN = WebElement(xpath='//a[@class="login"]')
 
 

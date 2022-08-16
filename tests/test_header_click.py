@@ -15,7 +15,7 @@ from setting import Conf
 
 def test_01_check_logo_refresh(web_browser):
     page = MainPage(web_browser)
-    page.help.click()
-    page.logo.click()
+    page.HELP_BTN.click()
+    page.LOGO_BTN.click()
     assert page.get_current_url() == Conf.main_url
     

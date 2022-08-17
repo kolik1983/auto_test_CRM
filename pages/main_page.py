@@ -52,12 +52,12 @@ class MainPage(WebPage):
     # Login/auth button
     AUTH_BTN = WebElement(xpath='//a[@class="login"]')
     # find bar
-    FND_BAR = (By.xpath('//input[@name="fg_text"]'))
+    FND_BAR = WebElement(xpath='//input[@name="fg_text"]')
     # category menu
-    FND_ = (By.xpath('//a[@class="open_search_cats"]'))
+    FND_ = WebElement(xpath='//a[@class="open_search_cats"]')
     # category in warhammer 40000
-    FND_MNU = (By.xpath('//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]'))
+    FND_MNU = WebElement(xpath='//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]')
     #string negative find
-    FND_NEG = (By.xpath('//p[contains(text(), "По Вашему запросу ничего не найдено")]'))
+    FND_NEG = WebElement(xpath='//p[contains(text(), "По Вашему запросу ничего не найдено")]')
 
 

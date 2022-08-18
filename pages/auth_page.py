@@ -5,7 +5,7 @@ from pages.elements import WebElement
 from pages.elements import ManyWebElements
 
 
-class MainPage(WebPage):
+class AuthPage(WebPage):
 
     def __init__(self, web_driver, url=''):
         if not url:

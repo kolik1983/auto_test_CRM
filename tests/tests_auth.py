@@ -43,7 +43,7 @@ def test_04_login_with_null_both(web_browser):
   page.PASS_B.send_keys(Conf.null_str)
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
-  
+   
   
 
 

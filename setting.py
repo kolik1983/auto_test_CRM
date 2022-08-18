@@ -20,3 +20,4 @@ class Conf():
     sel_url = 'https://minifreemarket.com/cabinet/products/add'
     spec_sym = '!@#$%^&*()'
     main_cat_url = 'https://minifreemarket.com/catalog?fg_text=&'
+    warh_url = 'https://minifreemarket.com/catalog/games-with-miniatures/warhammer-40000'

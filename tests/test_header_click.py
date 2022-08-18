@@ -10,7 +10,10 @@
 import pytest
 from pages.main_page import MainPage
 from setting import Conf
+import time
+from pynput.keyboard import Key, Controller
 
+keyboard = Controller()
 
 def test_01_check_logo_refresh(web_browser):
     """Проверка возврата на главную странице при нажатие на логотип"""
@@ -45,6 +48,7 @@ def test_05_change_lang_eng(web_browser):
     """Проверка изменения языка на сайте при смене языка на англ"""
     page = MainPage(web_browser)
     page.ENG_LANG.click()
+    time.sleep(5)
     assert "Language" == page.LOGO_ENG.get_text()
 
 
@@ -59,14 +63,14 @@ def test_07_change_currency_usd(web_browser):
     page = MainPage(web_browser)
     page.USD_BTN.click()
     page.USD_TXT.scroll_to_element()
-    assert page.USD_TXT.get_text()
+    assert page.USD_TXT.is_presented()
 
 def test_08_change_currency_eur(web_browser):
     """Проверка изменения валюты при нажатии на EUR """
     page = MainPage(web_browser)
     page.EUR_BTN.click()
     page.EUR_TXT.scroll_to_element()
-    assert page.EUR_TXT.get_text()
+    assert page.EUR_TXT.is_presented()
 
 def test_09_basket_link(web_browser):
     """Проверка перехода на страницу корзины при выборе Корзины"""
@@ -85,77 +89,90 @@ def test_11_favorite_link(web_browser):
     page = MainPage(web_browser)
     page.FAV_BTN.click()
     assert page.get_current_url() == Conf.fvr_url
-    
+
 def test_12_login_icon_without_auth(web_browser):
     """Проверка перехода на страницу регистрации без аутентификация"""
     page = MainPage(web_browser)
     page.USR_BTN.click()
     assert page.get_current_url() == Conf.auth_url
-    
+
+
 def test_13_login_reg_button(web_browser):
     """Переход на страницу регистрации при нажатии на Вход/Регистрация"""
     page = MainPage(web_browser)
     page.AUTH_BTN.click()
     assert page.get_current_url() == Conf.auth_url
-    
+
+
 def test_14_check_find_bar_positive_eng(web_browser):
     """Проверка поисковой строки на англ."""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.find_bar_eng)
+    keyboard.press(Key.enter)
     assert page.get_current_url() == Conf.necron_url_eng
-    
+
+
 def test_15_check_find_bar_positive_rus(web_browser):
     """Проверка поисковой строки н русском"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.find_bar_rus)
-    assert page.get_current_url() == Conf.necron_url_rus
-    
+    keyboard.press(Key.enter)
+    assert page.NECRON.is_presented()
+
+
 def test_16_check_find_bar_special_symb(web_browser):
-    """Проверка выдачи сообщения о отсутвие товара после ввода спец.символов"""
+    """Проверка выдачи сообщения об отсутствие товара после ввода спец.символов"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.spec_sym)
+    keyboard.press(Key.enter)
     assert page.NOT_FIND.is_visible
-    
+
+
 def test_17_check_find_bar_256_symb(web_browser):
-    """Проверка выдачи сообщения о отсутвие товара после вводе больше 255 символов"""
+    """Проверка выдачи сообщения об отсутствие товара после вводе больше 255 символов"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.more_255_pass)
+    keyboard.press(Key.enter)
     assert page.NOT_FIND.is_visible
-    
+
+
 def test_18_check_find_bar_255_symb(web_browser):
-    """Проверка выдачи сообщения о отсутвие товара после вводе 255 символов"""
+    """Проверка выдачи сообщения об отсутствие товара после вводе 255 символов"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.number_255_pass)
+    keyboard.press(Key.enter)
     assert page.NOT_FIND.is_visible
-    
+
+
 def test_19_check_find_bar_254_symb(web_browser):
-    """Проверка выдачи сообщения о отсутвие товара после вводе 254 символов"""
+    """Проверка выдачи сообщения об отсутствие товара после вводе 254 символов"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.number_254_pass)
+    keyboard.press(Key.enter)
     assert page.NOT_FIND.is_visible
-    
+
+
 def test_20_heck_find_bar_null_str(web_browser):
-    """Проверка выдачи сообщения о отсутвие товара после вводе пустой  строки"""
+    """Проверка выдачи сообщения об отсутствие товара после вводе пустой строки"""
     page = MainPage(web_browser)
-    page.FND_BAR.send_keys(Conf.nul_str)
+    page.FND_BAR.send_keys(Conf.null_str)
+    keyboard.press(Key.enter)
+    page.wait_page_loaded()
     assert page.get_current_url() == Conf.main_cat_url
-    
+
+
 def test_21_check_find_bar_digit(web_browser):
-    """Проверка выдачи сообщения о отсутвие товара после вводе цифр"""
+    """Проверка выдачи сообщения об отсутствие товара после вводе цифр"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.digit)
+    keyboard.press(Key.enter)
     assert page.NOT_FIND.is_visible
-    
+
+
 def test_22_check_category_block(web_browser):
-    """Проверка загрузки соответсвующей страница при выборе соответсвующей категории"""
+    """Проверка загрузки соответствующей страница при выборе соответствующей категории"""
     page = MainPage(web_browser)
     page.CAT_BTN.click()
     page.CAT_MNU.click()
-    page.WARH_BTN.click()
+    page.WHM_BTN.click()
     assert page.get_current_url() == Conf.warh_url
-    
-    
-    
-    
-    
-    

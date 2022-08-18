@@ -98,10 +98,23 @@ def test_13_login_reg_button(web_browser):
     page.AUTH_BTN.click()
     assert page.get_current_url() == Conf.auth_url
     
-def test_14_check_find_bar(web_browser):
-    """Проверка поисковой строки"""
+def test_14_check_find_bar_positive_eng(web_browser):
+    """Проверка поисковой строки на англ."""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.find_bar_eng)
+    assert page.get_current_url() == Conf.necron_url_eng
+    
+def test_15_check_find_bar_positive_rus(web_browser):
+    """Проверка поисковой строки н русском"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.find_bar_rus)
+    assert page.get_current_url() == Conf.necron_url_rus
+    
+def test_16_check_find_bar_special_symb(web_browser):
+    """Проверка выдачи сообщения о отсутвие товара после ввода спец.символов"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.spec_sym)
+    assert page.get_current_url() == Conf.necron_url_eng
     
     
     

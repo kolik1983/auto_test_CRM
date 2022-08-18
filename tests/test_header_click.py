@@ -98,4 +98,6 @@ def test_13_login_reg_button(web_browser):
     page.AUTH_BTN.click()
     assert page.get_current_url() == Conf.auth_url
     
+def test_14_
+    
     

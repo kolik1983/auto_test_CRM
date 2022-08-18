@@ -19,3 +19,4 @@ class Conf():
     bask_url = 'https://minifreemarket.com/order'
     sel_url = 'https://minifreemarket.com/cabinet/products/add'
     spec_sym = '!@#$%^&*()'
+    main_cat = 'https://minifreemarket.com/catalog?fg_text=&'

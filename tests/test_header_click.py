@@ -98,6 +98,10 @@ def test_13_login_reg_button(web_browser):
     page.AUTH_BTN.click()
     assert page.get_current_url() == Conf.auth_url
     
-def test_14_
+def test_14_check_find_bar(web_browser):
+    """Проверка поисковой строки"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.find_bar_eng)
+    
     
     

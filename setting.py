@@ -10,7 +10,7 @@ class Conf():
     more_255_pass = '1' * 256
     number_254_pass = '1' * 254
     number_255_pass = '1' * 255
-    null_email = ''
+    null_str = ''
     find_bar_eng = 'necrons'
     find_bar_rus = 'некроны'
     necron_url_eng = 'https://minifreemarket.com/catalog?fg_text=necrons&'

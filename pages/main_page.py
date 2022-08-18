@@ -57,7 +57,8 @@ class MainPage(WebPage):
     FND_ = WebElement(xpath='//a[@class="open_search_cats"]')
     # category in warhammer 40000
     FND_MNU = WebElement(xpath='//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]')
-    #string negative find
+    # string negative find
     FND_NEG = WebElement(xpath='//p[contains(text(), "По Вашему запросу ничего не найдено")]')
-
+    # box shows user info
+    PERS_BOX = WebElement(xpath='//div[@class="user_drop_down"]')
 

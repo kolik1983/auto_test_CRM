@@ -21,6 +21,10 @@ class AuthPage(WebPage):
     PASS_B = WebElement(xpath='//input[@name="password_"]')
     # login button
     LOG_BTN = WebElement(xpath='//a[@class="btn submit"]')
+    # user info icon
+    INF_USR = WebElement(xpath='//div[@class="seller clearfix"]')
+    # user nick
+    NIC_USR = WebElement(xpath='//a[@class="login"]')
     # registration button
     REG_HR = WebElement(xpath='//form/a[contains(text(), "Регистрация")]')
     # recovery passw button
@@ -31,3 +35,5 @@ class AuthPage(WebPage):
     FB_BTN = WebElement(xpath='//a[@class="soc_btn fb"]')
     # yandex button reg
     YA_BTN = WebElement(xpath='//a[@class="soc_btn ya"]')
+    # error login
+    ERR_MSG = WebElement(xpath='//div[@class="error"]')

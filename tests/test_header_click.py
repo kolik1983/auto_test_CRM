@@ -134,13 +134,26 @@ def test_19_check_find_bar_254_symb(web_browser):
     page.FND_BAR.send_keys(Conf.number_254_pass)
     assert page.NOT_FIND.is_visible
     
-def test_20_heck_find_bar_254_symb(web_browser):
+def test_20_heck_find_bar_null_str(web_browser):
     """Проверка выдачи сообщения о отсутвие товара после вводе пустой  строки"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.nul_str)
     assert page.get_current_url() == Conf.main_cat_url
     
-
+def test_21_check_find_bar_digit(web_browser):
+    """Проверка выдачи сообщения о отсутвие товара после вводе цифр"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.digit)
+    assert page.NOT_FIND.is_visible
+    
+def test_22_check_category_block(web_browser):
+    """Проверка загрузки соответсвующей страница при выборе соответсвующей категории"""
+    page = MainPage(web_browser)
+    page.CAT_BTN.click()
+    page.CAT_MNU.click()
+    page.WARH_BTN.click()
+    assert page.get_current_url() == Conf.warh_url
+    
     
     
     

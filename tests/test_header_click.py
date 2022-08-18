@@ -116,5 +116,33 @@ def test_16_check_find_bar_special_symb(web_browser):
     page.FND_BAR.send_keys(Conf.spec_sym)
     assert page.NOT_FIND.is_visible
     
+def test_17_check_find_bar_256_symb(web_browser):
+    """Проверка выдачи сообщения о отсутвие товара после вводе больше 255 символов"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.more_255_pass)
+    assert page.NOT_FIND.is_visible
+    
+def test_18_check_find_bar_255_symb(web_browser):
+    """Проверка выдачи сообщения о отсутвие товара после вводе 255 символов"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.number_255_pass)
+    assert page.NOT_FIND.is_visible
+    
+def test_19_check_find_bar_254_symb(web_browser):
+    """Проверка выдачи сообщения о отсутвие товара после вводе 254 символов"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.number_254_pass)
+    assert page.NOT_FIND.is_visible
+    
+def test_20_heck_find_bar_254_symb(web_browser):
+    """Проверка выдачи сообщения о отсутвие товара после вводе пустой  строки"""
+    page = MainPage(web_browser)
+    page.FND_BAR.send_keys(Conf.nul_str)
+    assert page.get_current_url() == Conf.main_cat_url
+    
+
+    
+    
+    
     
     

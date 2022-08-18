@@ -85,4 +85,13 @@ def test_11_favorite_link(web_browser):
     page = MainPage(web_browser)
     page.FAV_BTN.click()
     assert page.get_current_url() == Conf.fvr_url
-  
+    
+def test_12_login_icon_without_auth(web_browser):
+    """Проверка перехода на страницу регистрации без аутентификация"""
+    page = MainPage(web_browser)
+    page.USR_BTN.click()
+    assert page.get_current_url() == Conf.auth_url
+    
+def test_13_
+    
+    

@@ -32,11 +32,11 @@ class MainPage(WebPage):
      # Currency in usd
     USD_BTN = WebElement(xpath='//a[contains(text(), "USD")]')
      # Price in specified currency
-    USD_TXT = WebElement(xpath='//div[@class="price"][1]')
+    USD_TXT = ManyWebElements(xpath='//div[@class="price"][contains(text(), "$")]')
      # Currency in eur
     EUR_BTN = WebElement(xpath='//a[contains(text(), "EUR")]')
     # Price in specified currency
-    EUR_TXT = WebElement(xpath='//div[@class="price"][1]')
+    EUR_TXT = ManyWebElements(xpath='//div[@class="price"][contains(text(), "€")]')
     # Busket button
     BST_BTN = WebElement(xpath='//a[@class="basket"]')
     # Item button
@@ -44,9 +44,9 @@ class MainPage(WebPage):
     # Cat_mnu
     CAT_MNU = WebElement(xpath='//li/a[contains(text(), "Варгеймы")]')
     # Warhammer 40k button in category menu
-    WARH_BTN = WebElement(xpath='//a[@class="btn"][contains(text(), "Warhammer 40.000")]')  
+    WHM_BTN = WebElement(xpath='//a[@class="btn"][contains(text(), "Warhammer 40.000")]')
     # Category button
-    CAT_MNU = WebElement(xpath='//div[@class="cat_menu"]')
+    CTG_MNU = WebElement(xpath='//div[@class="cat_menu"]')
     # Shop button
     SHP_BTN = WebElement(xpath='//div[@class="item shops_btn"]')
     # Busket button
@@ -67,4 +67,5 @@ class MainPage(WebPage):
     PERS_BOX = WebElement(xpath='//div[@class="user_drop_down"]')
     # error messege
     NOT_FIND = WebElement(xpath='//p[contains(text(), "По Вашему запросу")]')
-
+    # string for find bar test
+    NECRON =ManyWebElements(xpath='//a[@class="cat_title"]')

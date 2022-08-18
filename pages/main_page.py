@@ -41,6 +41,10 @@ class MainPage(WebPage):
     BST_BTN = WebElement(xpath='//a[@class="basket"]')
     # Item button
     CAT_BTN = WebElement(xpath='//div[@class="item"]')
+    # Cat_mnu
+    CAT_MNU = WebElement(xpath='//li/a[contains(text(), "Варгеймы")]')
+    # Warhammer 40k button in category menu
+    WARH_BTN = WebElement(xpath='//a[@class="btn"][contains(text(), "Warhammer 40.000")]')  
     # Category button
     CAT_MNU = WebElement(xpath='//div[@class="cat_menu"]')
     # Shop button

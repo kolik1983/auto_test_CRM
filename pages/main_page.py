@@ -65,5 +65,6 @@ class MainPage(WebPage):
     FND_NEG = WebElement(xpath='//p[contains(text(), "По Вашему запросу ничего не найдено")]')
     # box shows user info
     PERS_BOX = WebElement(xpath='//div[@class="user_drop_down"]')
+    # error messege
     NOT_FIND = WebElement(xpath='//p[contains(text(), "По Вашему запросу")]')
 

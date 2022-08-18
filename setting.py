@@ -10,6 +10,7 @@ class Conf():
     more_255_pass = '1' * 256
     null_email = ''
     find_bar_eng = 'necrons'
+    find_bar_rus = 'некроны'
     necron_url = 'https://minifreemarket.com/catalog?fg_text=necrons&'
     shops_url = 'https://minifreemarket.com/shops'
     bask_url = 'https://minifreemarket.com/order'

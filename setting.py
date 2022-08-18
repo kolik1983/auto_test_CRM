@@ -8,6 +8,8 @@ class Conf():
     incorrect_pass = '12345678'
     rus_login = 'абвгд@'
     more_255_pass = '1' * 256
+    number_254_pass = '1' * 254
+    number_255_pass = '1' * 255
     null_email = ''
     find_bar_eng = 'necrons'
     find_bar_rus = 'некроны'

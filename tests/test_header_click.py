@@ -114,7 +114,7 @@ def test_16_check_find_bar_special_symb(web_browser):
     """Проверка выдачи сообщения о отсутвие товара после ввода спец.символов"""
     page = MainPage(web_browser)
     page.FND_BAR.send_keys(Conf.spec_sym)
-    assert page.get_current_url() == Conf.necron_url_eng
+    assert page.NOT_FIND.is_visible
     
     
     

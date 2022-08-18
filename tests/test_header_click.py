@@ -92,6 +92,10 @@ def test_12_login_icon_without_auth(web_browser):
     page.USR_BTN.click()
     assert page.get_current_url() == Conf.auth_url
     
-def test_13_
+def test_13_login_reg_button(web_browser):
+    """Переход на страницу регистрации при нажатии на Вход/Регистрация"""
+    page = MainPage(web_browser)
+    page.AUTH_BTN.click()
+    assert page.get_current_url() == Conf.auth_url
     
     

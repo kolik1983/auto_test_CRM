@@ -8,7 +8,7 @@ class Conf():
     key_space_login = 'erigov@mail.ru '
     key_space_passw = 'fktrctq83 '
     digit = '1234567890'
-    rus_login = 'абвгд@'
+    rus_login = 'абвгд'
     more_255_pass = '1' * 256
     number_254_pass = '1' * 254
     number_255_pass = '1' * 255

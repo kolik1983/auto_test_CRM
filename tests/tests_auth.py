@@ -187,6 +187,13 @@ def test_23_registration_link(web_browser):
   page.REG_HR.click()
   assert page.get_current_url() == Conf.reg_url
   
+def test_24_forgoth_pass_link(web_browser):
+  """Проерка перехода по ссылке забыли пароль? на соответсвующую страницу"""
+  page.AuthPage(web_browser)
+  page.FGT_HR.click()
+  assert page.get_current_url() == Conf.fgt_url
+  
+  
 
   
   

@@ -84,13 +84,30 @@ def test_09_special_symbol(web_browser):
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
   
-def test_10_254_symbol_password(web_browser):
-  """Проверка входа при вооде 254 символа """
+def test_10_254_symbols_password(web_browser):
+  """Проверка входа при вооде 254 символов в поле пароля"""
   page.AuthPage(web_browser)
   page.AUTH_B.send_keys(Conf.correct_login)
-  page.PASS_B.send_keys(Conf.spec_sym)
+  page.PASS_B.send_keys(Conf.number_254_pass)
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
+  
+def test_11_255_symbols_password(web_browser):
+  """Проверка входа при вводе 255 символов в поле пароля"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.number_255_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_12_256_symbols_password(web_browser):
+  """Проверка входа при вводе больше 255 символов в поле пароля"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.more_255_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
   
 
 

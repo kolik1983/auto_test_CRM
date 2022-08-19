@@ -108,6 +108,65 @@ def test_12_256_symbols_password(web_browser):
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
   
+def test_13_rus_symbols_password(web_browser):
+  """Проверка входа при вводе руссских букв в поле пароля"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.rus_login)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_14_rus_symbols_name(web_browser):
+  """Проверка входа при вводе руссских букв в поле имени"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.rus_login)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_15_254_symbols_name(web_browser):
+  """Проверка входа при вводе 254 символов в поле имени"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.number_254_pass)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_16_255_symbols_name(web_browser):
+  """Проверка входа при вводе 255 символов в поле имени"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.number_255_pass)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_17_256_symbols_name(web_browser):
+  """Проверка входа при вводе больше 255 символов в поле имени"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.more_255_pass)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  
+def test_18_login_with_space_after_valid_name(web_browser):
+  """Проверка входа валидным именем и пробелом в конце"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.key_space_login)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_19_special_symbol(web_browser):
+  """Проверка входа при вводе спец. символов в поле имени"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.spec_sym)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+
+  
+
+  
   
 
 

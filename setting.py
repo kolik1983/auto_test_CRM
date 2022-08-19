@@ -5,6 +5,8 @@ class Conf():
     correct_login = 'erigov@mail.ru'
     correct_pass = 'fktrctq83'
     incorrect_login = 'qwe123@#$'
+    key_space_login = 'erigov@mail.ru '
+    key_space_passw = 'fktrctq83 '
     digit = '1234567890'
     rus_login = 'абвгд@'
     more_255_pass = '1' * 256

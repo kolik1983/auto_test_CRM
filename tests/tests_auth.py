@@ -163,6 +163,26 @@ def test_19_special_symbol(web_browser):
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
   
+def test_20_VK_button(web_browser):
+  """Проверка перехода на страницу авторизации через VK"""
+  page.AuthPage(web_browser)
+  page.VK_BTN.click()
+  assert page.get_current_url() == Conf.vk_url
+  
+def test_21_FB_button(web_browser):
+  """Проверка перехода на страницу авторизации через FB"""
+  page.AuthPage(web_browser)
+  page.FB_BTN.click()
+  assert page.get_current_url() == Conf.fb_url
+  
+def test_22_YA_button(web_browser):
+  """Проверка перехода на страницу авторизации через YA"""
+  page.AuthPage(web_browser)
+  page.YA_BTN.click()
+  assert page.get_current_url() == Conf.ya_url
+  
+  
+  
 
   
 

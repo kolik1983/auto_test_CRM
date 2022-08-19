@@ -84,7 +84,13 @@ def test_09_special_symbol(web_browser):
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
   
-def 
+def test_10_254_symbol_password(web_browser):
+  """Проверка входа при вооде 254 символа """
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.spec_sym)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
   
 
 

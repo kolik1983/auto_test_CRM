@@ -181,6 +181,14 @@ def test_22_YA_button(web_browser):
   page.YA_BTN.click()
   assert page.get_current_url() == Conf.ya_url
   
+def test_23_registration_link(web_browser):
+  """Проерка перехода по ссылке регистрация на соответсвующую страницу"""
+  page.AuthPage(web_browser)
+  page.REG_HR.click()
+  assert page.get_current_url() == Conf.reg_url
+  
+
+  
   
   
 

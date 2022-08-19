@@ -24,3 +24,7 @@ class Conf():
     warh_url = 'https://minifreemarket.com/catalog/games-with-miniatures/warhammer-40000'
     hlp_url = 'https://minifreemarket.com/help'
     fvr_url = 'https://minifreemarket.com/favorites'
+    vk_url = 'https://oauth.vk.com/authorize?client_id=6882001&scope=market,groups,offline,photos,wall,email&response_type=code&redirect_uri=https://minifreemarket.com/cabinet/auth/vk'
+    fd_url = 'https://www.facebook.com/dialog/oauth?client_id=2061688167260251&scope=&response_type=code&redirect_uri=https://minifreemarket.com/cabinet/auth/fb'
+    ya_url = 'https://passport.yandex.ru/auth?retpath=https%3A%2F%2Foauth.yandex.ru%2Fauthorize%3Fclient_id%3Dc78859c827384a7c9a657e789875e1ec%26scope%3Dlogin%3Aemail%2520login%3Ainfo%2520login%3Aavatar%26response_type%3Dcode%26redirect_uri%3Dhttps%3A%2F%2Fminifreemarket.com%2Fcabinet%2Fauth%2Fya&noreturn=1&origin=oauth'
+ 

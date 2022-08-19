@@ -178,7 +178,13 @@ def test_22_check_category_block(web_browser):
     assert page.get_current_url() == Conf.warh_url
     
 def test_23_login_icon_with_authorization(web_browser):
-    """Проверка выпадающего меню профиля при нажатии на кнопку профиля при футентификации"""
+    """Проверка выпадающего меню профиля при нажатии на кнопку профиля при аутентификации"""
     page = MainPage(web_browser)
     page.USR_BTN.click()
-    assert page.get_current_url() == Conf.auth_url
+    page.AUTH_B.send_keys(Conf.correct_login)
+    page.PASS_B.send_keys(Conf.correct_pass)
+    page.LOG_BTN.click()
+    page.USR_BTN.click()
+    assert page.PERS_BOX.is_presented
+    
+

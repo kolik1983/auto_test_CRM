@@ -43,7 +43,48 @@ def test_04_login_with_null_both(web_browser):
   page.PASS_B.send_keys(Conf.null_str)
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible
-   
+  
+def test_05_login_with_nonvalid_name(web_browser):
+  """Проверка входа с невалидным именем"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.incorrect_login )
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_06_login_with_nonvalid_password(web_browser):
+  """Проверка входа с невалидным паролем"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.digit)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_07_login_with_space_after_valid_name(web_browser):
+  """Проверка входа валидным логином и пробелом в конце"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.key_space_login)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_08_login_with_space_after_valid_password(web_browser):
+  """Проверка входа валидным паролем и пробелом в конце"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.key_space_passw)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def test_09_special_symbol(web_browser):
+  """Проверка входа при вводе спец. символов в полк пароля"""
+  page.AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.spec_sym)
+  page.LOG_BTN.click()
+  assert page.ERR_MSG.is_visible
+  
+def 
   
 
 

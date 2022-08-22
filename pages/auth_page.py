@@ -37,3 +37,5 @@ class AuthPage(WebPage):
     YA_BTN = WebElement(xpath='//a[@class="soc_btn ya"]')
     # error login
     ERR_MSG = WebElement(xpath='//div[@class="error"]')
+    # Button user icon
+    USR_BTN = WebElement(xpath='//a[@class="user"]')

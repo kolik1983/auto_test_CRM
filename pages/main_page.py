@@ -69,3 +69,9 @@ class MainPage(WebPage):
     NOT_FIND = WebElement(xpath='//p[contains(text(), "По Вашему запросу")]')
     # string for find bar test
     NECRON =ManyWebElements(xpath='//a[@class="cat_title"]')
+    # footer_link_VK
+    VK_FTR = WebElement(xpath='//a[@class="vk"]')
+    # footer_link_FB
+    FB_FTR = WebElement(xpath='//a[@class="fb"]')
+    # footer_link_YT
+    YT_FTR = WebElement(xpath='//a[@class="yt"]')

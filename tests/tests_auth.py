@@ -220,6 +220,14 @@ def test_25_user_registration_link(web_browser):
   page.CAB_REG.click()
   assert page.get_current_url() == Conf.reg_url
   
+  def test_26_login_icon_with_authorization(web_browser):
+  """Проверка выпадающего меню профиля при нажатии на кнопку профиля при аутентификации"""
+  page = AuthPage(web_browser)
+  page.AUTH_B.send_keys(Conf.correct_login)
+  page.PASS_B.send_keys(Conf.correct_pass)
+  page.LOG_BTN.click()
+  page.USR_BTN.click()
+  assert page.PERS_BOX.is_presented()
 
 
   

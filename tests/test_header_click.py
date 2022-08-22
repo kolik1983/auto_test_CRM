@@ -123,50 +123,55 @@ def test_15_check_find_bar_positive_rus(web_browser):
 def test_16_check_find_bar_special_symb(web_browser):
     """Проверка выдачи сообщения об отсутствие товара после ввода спец.символов"""
     page = MainPage(web_browser)
+    page.wait_page_loaded()
     page.FND_BAR.send_keys(Conf.spec_sym)
     keyboard.press(Key.enter)
-    assert page.NOT_FIND.is_visible
+    assert page.NOT_FIND.is_visible()
 
 
-def test_17_check_find_bar_256_symb(web_browser):
-    """Проверка выдачи сообщения об отсутствие товара после вводе больше 255 символов"""
+def test_17_check_find_bar_253_symb(web_browser):
+    """Проверка сообщения об ошибке после ввода больше 252 символов"""
     page = MainPage(web_browser)
-    page.FND_BAR.send_keys(Conf.more_255_pass)
+    page.wait_page_loaded()
+    page.FND_BAR.send_keys(Conf.more_252_pass)
     keyboard.press(Key.enter)
-    assert page.NOT_FIND.is_visible
+    assert page.NOT_FIND.is_visible()
 
 
-def test_18_check_find_bar_255_symb(web_browser):
-    """Проверка выдачи сообщения об отсутствие товара после вводе 255 символов"""
+def test_18_check_find_bar_252_symb(web_browser):
+    """Проверка выдачи сообщения об отсутствие товара после ввода 252 символа"""
     page = MainPage(web_browser)
-    page.FND_BAR.send_keys(Conf.number_255_pass)
+    page.wait_page_loaded()
+    page.FND_BAR.send_keys(Conf.number_252_pass)
     keyboard.press(Key.enter)
-    assert page.NOT_FIND.is_visible
+    assert page.NOT_FIND.is_visible()
 
 
-def test_19_check_find_bar_254_symb(web_browser):
-    """Проверка выдачи сообщения об отсутствие товара после вводе 254 символов"""
+def test_19_check_find_bar_251_symb(web_browser):
+    """Проверка выдачи сообщения об отсутствие товара после ввода 251 символа"""
     page = MainPage(web_browser)
-    page.FND_BAR.send_keys(Conf.number_254_pass)
+    page.wait_page_loaded()
+    page.FND_BAR.send_keys(Conf.number_251_pass)
     keyboard.press(Key.enter)
-    assert page.NOT_FIND.is_visible
+    assert page.NOT_FIND.is_visible()
 
 
 def test_20_heck_find_bar_null_str(web_browser):
     """Проверка выдачи сообщения об отсутствие товара после вводе пустой строки"""
     page = MainPage(web_browser)
+    page.wait_page_loaded()
     page.FND_BAR.send_keys(Conf.null_str)
     keyboard.press(Key.enter)
-    page.wait_page_loaded()
     assert page.get_current_url() == Conf.main_cat_url
 
 
 def test_21_check_find_bar_digit(web_browser):
     """Проверка выдачи сообщения об отсутствие товара после вводе цифр"""
     page = MainPage(web_browser)
+    page.wait_page_loaded()
     page.FND_BAR.send_keys(Conf.digit)
     keyboard.press(Key.enter)
-    assert page.NOT_FIND.is_visible
+    assert page.NOT_FIND.is_visible()
 
 
 def test_22_check_category_block(web_browser):
@@ -176,15 +181,29 @@ def test_22_check_category_block(web_browser):
     page.CAT_MNU.click()
     page.WHM_BTN.click()
     assert page.get_current_url() == Conf.warh_url
-    
-def test_23_login_icon_with_authorization(web_browser):
-    """Проверка выпадающего меню профиля при нажатии на кнопку профиля при аутентификации"""
+
+def test_23_check_link_VK_footer(web_browser):
+    """Проверка работы ссылки с иконки VK при нажатии на соответсвующую иконку"""
     page = MainPage(web_browser)
-    page.USR_BTN.click()
-    page.AUTH_B.send_keys(Conf.correct_login)
-    page.PASS_B.send_keys(Conf.correct_pass)
-    page.LOG_BTN.click()
-    page.USR_BTN.click()
-    assert page.PERS_BOX.is_presented
-    
+    page.wait_page_loaded()
+    page.VK_FTR.scroll_to_element()
+    page.VK_FTR.click()
+    assert page.VK_FTR.is_clickable()
+
+def test_23_check_link_FB_footer(web_browser):
+    """Проверка работы ссылки с иконки FB при нажатии на соответсвующую иконку"""
+    page = MainPage(web_browser)
+    page.wait_page_loaded()
+    page.FB_FTR.scroll_to_element()
+    page.FB_FTR.click()
+    assert page.FB_FTR.is_clickable()
+
+def test_23_check_link_YT_footer(web_browser):
+    """Проверка работы ссылки с иконки YOUTUBE при нажатии на соответсвующую иконку"""
+    page = MainPage(web_browser)
+    page.wait_page_loaded()
+    page.YT_FTR.scroll_to_element()
+    page.YT_FTR.click()
+    assert page.YT_FTR.is_clickable()
+
 

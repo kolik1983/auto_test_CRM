@@ -63,15 +63,15 @@ class MainPage(WebPage):
     FND_MNU = WebElement(xpath='//div[@data-value="/catalog/games-with-miniatures/warhammer-40000"]')
     # string negative find
     FND_NEG = WebElement(xpath='//p[contains(text(), "По Вашему запросу ничего не найдено")]')
-    # box shows user info
-    PERS_BOX = WebElement(xpath='//div[@class="user_drop_down"]')
-    # error messege
+    # error message
     NOT_FIND = WebElement(xpath='//p[contains(text(), "По Вашему запросу")]')
     # string for find bar test
-    NECRON =ManyWebElements(xpath='//a[@class="cat_title"]')
+    NECRON = ManyWebElements(xpath='//a[@class="cat_title"]')
     # footer_link_VK
     VK_FTR = WebElement(xpath='//a[@class="vk"]')
     # footer_link_FB
     FB_FTR = WebElement(xpath='//a[@class="fb"]')
     # footer_link_YT
     YT_FTR = WebElement(xpath='//a[@class="yt"]')
+
+

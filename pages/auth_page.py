@@ -36,6 +36,8 @@ class AuthPage(WebPage):
     # yandex button reg
     YA_BTN = WebElement(xpath='//a[@class="soc_btn ya"]')
     # error login
-    ERR_MSG = WebElement(xpath='//div[@class="error"]')
+    ERR_MSG = WebElement(xpath='//p[@class="error"]')
     # Button user icon
-    USR_BTN = WebElement(xpath='//a[@class="user"]')
+    USR_BTN = WebElement(xpath='//div[@class="user toggle_next"]')
+    # box shows user info
+    PERS_BOX = WebElement(xpath='//div[@class="user_drop_down"]')

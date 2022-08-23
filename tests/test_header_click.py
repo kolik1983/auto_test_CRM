@@ -190,7 +190,7 @@ def test_23_check_link_VK_footer(web_browser):
     page.VK_FTR.click()
     assert page.VK_FTR.is_clickable()
 
-def test_23_check_link_FB_footer(web_browser):
+def test_24_check_link_FB_footer(web_browser):
     """Проверка работы ссылки с иконки FB при нажатии на соответсвующую иконку"""
     page = MainPage(web_browser)
     page.wait_page_loaded()
@@ -198,7 +198,7 @@ def test_23_check_link_FB_footer(web_browser):
     page.FB_FTR.click()
     assert page.FB_FTR.is_clickable()
 
-def test_23_check_link_YT_footer(web_browser):
+def test_25_check_link_YT_footer(web_browser):
     """Проверка работы ссылки с иконки YOUTUBE при нажатии на соответсвующую иконку"""
     page = MainPage(web_browser)
     page.wait_page_loaded()

@@ -5,3 +5,4 @@
 python -m pytest -v --driver Chrome --driver-path C:\Users\erigo\PycharmProjects\auto_test_CRM\tests\test_header_click.py(tests_auth.py)
 - при хранении драйвера в отдельной папке - 
 python -m pytest -v --driver Chrome --driver-path c:/driver/chromedriver.exe C:\Users\erigo\PycharmProjects\auto_test_CRM\tests\test_header_click.py(tests_auth.py)
+При тестировании найден баг - тест №7 в файле - auth_test. Тест падает. При вводе корректного логина с пробелом в конце и корректного пароля система пропустила вход пользователя. Ожидаемый резултьтат - система выдает сообщение об ошибке при неправильном вводе пароля или несуществующем пользователе.

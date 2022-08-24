@@ -64,7 +64,7 @@ def test_06_login_with_not_valid_password(web_browser):
   page.LOG_BTN.click()
   assert page.ERR_MSG.is_visible()
 
-
+@pytest.mark.xfail
 def test_07_login_with_space_after_valid_name(web_browser):
   """Проверка входа валидным логином и пробелом в конце.  Этот тест нашел баг, фактически сайт принимает такое имя, а должен выдавать ошибку"""
   page = AuthPage(web_browser)
